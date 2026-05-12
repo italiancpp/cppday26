@@ -1,0 +1,39 @@
+/* I have no idea what language bit becomes what class. Deduced from a test.*/
+
+/* Function names */
+.highlight .nf {
+    color: blue;
+}
+
+
+/* Class names */
+.highlight .n {
+    color: green;
+}
+
+/* Operators */
+.highlight .o {
+    color: black;
+}
+
+/* Parenthesis or punctuation */
+.highlight .p {
+    color: black;
+}
+
+/* Keywords */
+.highlight .k {
+    color: red;
+}
+
+
+/* Built in types */
+.highlight .kt {
+    color: orange;
+}
+
+/* String literals */
+.highlight .s {
+    color: violet;
+}
+

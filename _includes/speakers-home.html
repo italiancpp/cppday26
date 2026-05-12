@@ -1,0 +1,25 @@
+<!-- Portfolio Grid Section -->
+    <section class="bg-light-gray">
+        <a id="speakers" class="push-down-anchor"></a>
+        <div class="container">
+            <div class="row">
+                <div class="text-center">
+                    <h1 class="section-heading">Speakers</h1>
+                </div>
+            </div>
+            
+            <div class="grid-speakers h-flex">
+            {% for speaker in  site.data.speakers %}
+                <div class="speakers-item">
+                    <a href="#speaker_id_{{ speaker.name | replace: " ", "_" }}" class="speakers-link" data-toggle="modal">
+                        <img src="img/Speaker_{{ speaker.name | replace: " ", "_"  }}.{{ speaker.format }}" class="img-responsive img-centered" alt="Picture of {{ speaker.name }}">
+                    </a>
+                    <div class="speakers-caption text-center">
+                         <a href="#speaker_id_{{ speaker.name | replace: " ", "_" }}" class="speakers-link" data-toggle="modal"><h4>{{ speaker.name }}</h4></a>
+                        <p class="text-muted">{{ speaker.job }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+            </div>
+        </div>
+    </section>

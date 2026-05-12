@@ -1,0 +1,23 @@
+<footer class="container">
+    <div>
+        <a class="btn-xl" style="display: inline-block; margin-top: 60px; margin-bottom: 60px; text-transform: none;" href="https://github.com/italiancpp/code-of-conduct/blob/master/code_of_conduct.md">All our events abide by the Italian C++ Community Code of Conduct</a> 
+    </div>
+    
+    <div>
+        <div class="row">
+            <ul class="list-inline social-buttons">
+                {% for network in site.social %}
+                    <li><a href="{{ network.url }}"><i class="fa fa-{{ network.title }}"></i></a></li>
+                {% endfor %}
+            </ul>
+        </div>
+        <BR>
+        <div class="row">
+                <span class="copyright">© {{ 'now' | date: "%Y" }}
+                 <a href="https://italiancpp.org">Italian C++ Community.</a>
+Adapted from the <a href="https://github.com/melvinchng/event-jekyll-theme">Event Jekyll Theme</a> by <a href="http://melvinchng.github.io">Melvin Ch'ng</a></span>
+        </div>
+        
+
+    </div>
+</footer>

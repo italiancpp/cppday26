@@ -1,0 +1,27 @@
+<section>
+<a id="reservation" class="push-down-anchor"></a>
+<div class="text-center">
+    <h1>Register now</h1>
+</div>
+
+<div id="eventbrite-widget-container-{{site.eventbrite_id}}"></div>
+
+<script src="https://www.eventbrite.it/static/widgets/eb_widgets.js"></script>
+
+<script type="text/javascript">
+    var exampleCallback = function() {
+        console.log('Order complete!');
+    };
+
+    window.EBWidgets.createWidget({
+        // Required
+        widgetType: 'checkout',
+        eventId: '{{site.eventbrite_id}}',
+        iframeContainerId: 'eventbrite-widget-container-{{site.eventbrite_id}}',
+
+        // Optional
+        iframeContainerHeight: 425,  // Widget height in pixels. Defaults to a minimum of 425px if not provided
+        onOrderComplete: exampleCallback  // Method called when an order has successfully completed
+    });
+</script>
+</section>

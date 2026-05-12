@@ -1,0 +1,160 @@
+<section >
+
+<script type="text/javascript">
+function swapShortVersion(abstract_id) {
+  var short = document.getElementById(abstract_id + "_short");
+  var long = document.getElementById(abstract_id + "_long");
+  
+  var short_toggle = document.getElementById(abstract_id + "_short_toggle");
+  var long_toggle = document.getElementById(abstract_id + "_long_toggle");
+
+  if (long.style.display === "none") {
+    short_toggle.style.display = "none";
+    short.style.display = "none";
+    long_toggle.style.display = "block";
+    long.style.display = "block";
+  } else {
+    long.style.display = "none";
+    short.style.display = "block";
+    long_toggle.style.display = "none";
+    short_toggle.style.display = "block";
+  }
+} 
+
+function ChangeTimeZone() {
+    var timeZoneSelector = document.getElementById("timeZone");
+    var selectedZone = timeZoneSelector.value;
+}
+
+function GetSelectedTimeZone() {
+    return document.getElementById("timeZone").value;
+}
+
+function SetLocale() {
+    const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    var localTimeZone = document.getElementById("localTimeZone");
+    localTimeZone.text = tz;
+    localTimeZone.value = tz;
+}
+
+function ConvertToTimeZone(isoDate, timeZone) {
+    var date = new Date(isoDate);
+    
+    if (timeZone == "UTC") {
+        // https://stackoverflow.com/questions/55427168/is-there-a-function-to-get-the-utc-date-in-the-locale-string-format
+        return (
+            new Date(
+              date.getUTCFullYear(),
+              date.getUTCMonth(),
+              date.getUTCDate(),
+              date.getUTCHours(),
+              date.getUTCMinutes(),
+              date.getUTCSeconds()
+            ).toLocaleString('es-ES', {hour: "numeric", minute: "numeric"})
+        );
+    }
+    
+    return date.toLocaleString("it-IT", {timeZone: timeZone, hour: "numeric", minute: "numeric"});   
+}
+
+function ToFullIsoDate(agendaTimeString) {
+    var dayString = document.getElementById("baseIsoDate").value;
+    return dayString + "T" + agendaTimeString.trim() + ":00Z";
+}
+
+function ConvertToSelectedTimeZone() {
+    var timesToConvert = document.getElementsByClassName("convertibleTime"); 
+    var targetTimeZone = GetSelectedTimeZone();
+    
+    if (targetTimeZone == "CEST")
+        targetTimeZone = "Europe/Rome";
+
+    
+    for (var i = 0; i < timesToConvert.length; ++i) {
+        var timeRoot = timesToConvert[i];
+        var utcContainer = timeRoot.childNodes[0];
+        var dateAsText = timeRoot.childNodes[1];
+        var utcTimes = utcContainer.value.split("-");  // Time must be like 11:30 - 12:30.
+   
+        var startTime = ToFullIsoDate(utcTimes[0]);
+        var endTime = ToFullIsoDate(utcTimes[1]);
+        var currentTime = new Date().toISOString();
+
+        // Decommonet to force a particular time when testing.
+        // currentTime = '2025-10-25T12:40:41.132Z'
+        
+        dateAsText.nodeValue = 
+            ConvertToTimeZone(startTime, targetTimeZone) +
+            " - " +
+            ConvertToTimeZone(endTime, targetTimeZone);
+
+        // ISO dates can be sorted lexicographically.
+        var ongoing = startTime < currentTime && currentTime < endTime;
+        if (ongoing) {
+            var row = timeRoot.parentElement;
+            row.classList.add('ongoingEvent');
+        }
+
+    } 
+       
+}
+
+</script>
+
+<a id="agenda" class="push-down-anchor"></a>
+<div class="text-center">
+    <h1>Agenda</h1>
+</div>
+
+    <!-- TODO: this may "corrupt" elements we add after. Bring out? Include in home itself? -->
+  <style type="text/css">
+    /*INCLUDE MAIN CSS FILE*/
+    {% capture criticalcss %}
+      {% include /2016_css/critical.scss %}
+    {% endcapture %}
+    {{ criticalcss | scssify }}
+  </style>
+
+    <input type="hidden" id="baseIsoDate" value="{{ site.date }}">
+
+    <!--This div sizes the agenda and gives rule context to inner elements. -->
+    <div class="event">
+        <table class="agenda">
+            <thead>
+                <tr>
+                    <th class="row-1 agenda-time"><center>Time</center><select class="timeZone" name="timeZone" id="timeZone" onChange="ChangeTimeZone();ConvertToSelectedTimeZone();">
+  <option value="UTC">UTC</option>
+  <option value="CEST" selected="selected">Rome (CEST)</option>
+  <option value="America/New_York">U. S. East Coast</option>
+  <option value="Asia/Tokyo">Japan</option>
+  <optgroup label="Your browser time">
+    <option value="LOCALE" id="localTimeZone">Your Locale</option>
+  </optgroup>
+</select></th>
+                    <th class="row-2 agenda-activity"><center>Content</center></th>
+                </tr>
+            </thead>
+            
+            <!--Careful with white spaces. This section is really sensitive to any space. The resulting code is... questionable.-->
+            {% assign track_a = site.data.agenda_track_A %}
+            {% assign rows = track_a.size | minus: 1 %}
+            
+            {%- for i in (0..rows) -%}
+                {% assign slides_link = track_a[i].slides %}
+                {% assign video_link = track_a[i].video %}
+                
+                <tr>
+                    <td class="convertibleTime"><input type="hidden" value="{{ track_a[i].time }}">{{ track_a[i].time }}</td>
+                    <td class="content-on-top">{% assign talk_id = track_a[i].item | replace: " ", "_" | replace: "+", "p" | replace: ":", "_"  %}{% if track_a[i].abstract %}<a href="#talk_id_{{talk_id}}" class="speakers-link" data-toggle="modal">{{- track_a[i].item -}}</a>{% else %}<span><b>{{- track_a[i].item -}}</b></span>{% endif %}
+                        {% for person in track_a[i].speaker %}{% assign speaker_id = person | replace: " ", "_"  %}<br/>🎙️<a href="#speaker_id_{{speaker_id}}" class="speakers-link" data-toggle="modal" data-dismiss="modal">{{- person -}}</a>{% endfor %}{% if slides_link %}<br><a href="{{slides_link}}" target="_blank">&#x1F64B; Slides</a>{% endif %}{% if video_link and slides_link %} - {% endif %}{% if video_link %}<a href="{{video_link}}" target="_blank">📽 Video</a>{% endif %}
+                    </td>
+                </tr> 
+            {%- endfor -%}
+    </table>
+    </div>
+    
+<script>
+    SetLocale();
+    ConvertToSelectedTimeZone();
+</script>
+</section>

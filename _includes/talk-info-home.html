@@ -1,0 +1,57 @@
+<!-- Talk + Speaker Modals -->
+{% for talk in site.data.agenda_track_A %}
+  {% if talk.abstract %}
+    <div class="portfolio-modal modal fade" id="talk_id_{{ talk.item | replace: " ", "_" | replace: "+", "p" | replace: ":", "_" }}" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-content">
+        <div class="close-modal" data-dismiss="modal">
+          <div class="lr"><div class="rl"></div></div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-10 col-lg-offset-1">
+              <div class="modal-body">
+                
+                <!-- Talk info -->
+                <h2>{{ talk.item }}</h2>
+                <p class="convertibleTime"><input type="hidden" value="{{ talk.time }}">{{ talk.time }}</p>
+                <hr class="star-primary">
+                <p>{{ talk.abstract }}</p>
+
+                <!-- Speaker section -->
+                {% if talk.speaker %}
+                  <h3 style="margin-top:3rem;">Speaker{% if talk.speaker.size > 1 %}s{% endif %}</h3>
+                  {% for sp in talk.speaker %}
+                    {% assign spdata = site.data.speakers | where: "name", sp | first %}
+                    {% if spdata %}
+                      <div class="row speaker-block" style="margin-top:2rem; margin-bottom:2rem;">
+                        <!-- Left column: portrait + name + job -->
+                        <div class="col-sm-3 text-center">
+                          <img src="img/Speaker_{{ spdata.name | replace: " ", "_" }}.{{ spdata.format }}" 
+                               alt="{{ spdata.name }}" 
+                               class="img-responsive img-circle" 
+                               style="max-width:120px; margin:0 auto 1rem;">
+                          <h4>{{ spdata.name }}</h4>
+                          <p class="text-muted">{{ spdata.job }}</p>
+                        </div>
+                        <!-- Right column: description -->
+                        <div class="col-sm-9">
+                          <p>{{ spdata.description }}</p>
+                        </div>
+                      </div>
+                      <hr>
+                    {% endif %}
+                  {% endfor %}
+                {% endif %}
+
+                <button type="button" class="btn btn-default" data-dismiss="modal">
+                  <i class="fa fa-times"></i> Close
+                </button>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+{% endfor %}

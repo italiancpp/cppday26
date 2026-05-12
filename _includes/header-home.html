@@ -1,0 +1,51 @@
+<!-- Navigation -->
+    <nav class="navbar navbar-default navbar-default-color navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="https://italiancpp.org">
+                <img class="navbar-logo" src="{{ site.logo }}" style="margin-top:-15px" alt="icon-about"></a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="/"></a>
+                    </li>
+                    <li><a class="page-scroll" href="#page-top">Top</a></li>
+                    {% if site.sections contains "cfs" %}
+                        <li><a class="page-scroll" href="#csf-form">Call For Sessions</a></li>
+                    {% endif %}
+                    {% if site.sections contains "reservation" %}
+                        <li><a class="page-scroll" href="#reservation">Register now</a></li>
+                    {% endif %}
+                    {% if site.sections contains "speakers" %}
+                        <li><a class="page-scroll" href="#speakers">Speakers</a></li>
+                    {% endif %}
+                    {% if site.sections contains "agenda" %}
+                        <li><a class="page-scroll" href="#agenda">Agenda</a></li>
+                    {% endif %}
+                    {% if site.sections contains "sponsors" %}
+                        <li><a class="page-scroll" href="#sponsors">Sponsors</a></li>
+                    {% endif %}
+                    {% if site.sections contains "map" %}
+                        <li><a class="page-scroll" href="#map">Where</a></li>
+                    {% endif %}
+                    <li>
+                        <a class="page-scroll" href="{{ site.contact_url }}">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+

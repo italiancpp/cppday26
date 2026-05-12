@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<style>
+.wide-hr {
+    /* Workaround for <hr> not displaying...*/
+    width: 100%;
+}
+
+.highlight {
+    font-weight: bold;
+     font-size: large;
+}
+
+.mid-importance {
+    font-weight: bold;
+}
+
+.metro-line-logo {
+    width: 20%;
+}
+</style>
+
+  {% include head.html %}
+ 
+
+<!--Remove image dragging -->  
+<body id="page-top" class="index" ondragstart="return false;" ondrop="return false;">
+
+<section class="bg-light-gray">
+
+<div class="text-center">
+    <h1>How to Reach the C++ Day</h1>
+</div>
+
+<div class="narrow">
+ <hr class="wide-hr">
+    <div class="v-flex">
+        <div class="h-flex ">
+            <div class="one-third-wide highlight">
+                <p>Address</p>
+            </div>
+            <div class="two-thirds-wide">
+                <p>SEA Vision</p>                
+                <p class="mid-importance">Via Claudio Treves, 9E, Pavia</p>
+            </div>
+        </div>
+                
+        <hr class="wide-hr">
+        <div>
+            {% include big_map.html %}
+        </div>  
+        
+    <div>
+</div>
+</section>
+
+</body>
+</html>

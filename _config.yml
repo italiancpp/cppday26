@@ -1,0 +1,54 @@
+# Use site.<name> to read the stuff from here.
+
+title: C++ Day 2026
+# Stick to ISO 8601 - will be used for time conversion.
+date: 2026-10-17
+place: # Included in intro image. Online
+
+description: > # this means to ignore newlines until "baseurl:"
+  A full-day event about C++ development organized with passion by the Italian C++ Community. In Pavia, free to attend.
+  
+baseurl: "/cppday26" # the subpath of your site, e.g. /blog Remove to serve the site locally.
+url: "italiancpp.github.io" # the base hostname & protocol for your site
+
+# Allowed values: cfs, reservation, speakers, agenda, map, sponsors.
+sections: ['cfs', 'map', 'sponsors']
+
+general_feedback: "https://docs.google.com/forms/d/e/1FAIpQLScj9ZDK_bc_32lLmfNScWxjpn8oQwARna152rI0LecVFds1ZA/viewform?usp=dialog"
+eventbrite_id: "1565601820189"
+
+# Build settings
+markdown: kramdown
+
+logo: "https://raw.githubusercontent.com/italiancpp/misc/master/logo/logo_completo.png"
+contact_url: mailto:info@italiancpp.org
+
+#Image in the header
+poster: wallpaper-retro.jpg
+navbar_height: 40
+
+google_site_verification: googleXXXXXXXXXXXXXXXX.html
+
+include: []
+
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Social networks usernames 
+social:
+  - title: desktop
+    url: https://italiancpp.org
+  - title: facebook
+    url: https://www.facebook.com/italiancpp/
+  - title: twitter
+    url: https://x.com/italiancpp
+  - title: linkedin
+    url: https://www.linkedin.com/company/italiancpp
+  - title: youtube
+    url: https://www.youtube.com/@italiancppcommunity
+    
+
+# Build settings
+markdown: kramdown
+permalink: pretty

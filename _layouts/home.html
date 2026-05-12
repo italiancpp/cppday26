@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+
+    <!--Remove image dragging -->  
+    <body id="page-top" class="index" ondragstart="return false;" ondrop="return false;">
+
+    <!-- Header bar with logo and contacts. -->    
+    {% include header-home.html %}
+
+    <header>
+        <div class="container">
+            <div class="intro-text">
+            <!--
+                Not in use as of 2021. Kept as we may want to restore it later.
+                <div class="intro-heading monospace">{{ site.title }}</div>
+                <div class="intro-lead-in">{{ site.date }}</div>
+                <div class="intro-lead-in">{{ site.place }}</div>
+                <a href="#about" class="page-scroll btn btn-xl">Tell me more</a>
+                -->
+            </div>
+        </div>
+    </header> 
+    
+    {% include intro-text-home.html %}
+   
+    {% if site.sections contains "cfs" %}
+        {% include cfs-form.html %}
+    {% endif %}
+   
+    {% if site.sections contains "reservation" %}
+        {% include embedded-reservation-modal.html %}
+    {% endif %}
+   
+    {% if site.sections contains "speakers" %}
+        {% include speakers-home.html %}
+        {% include speaker-info-home.html %}
+        {% include talk-info-home.html %}
+    {% endif %}
+    
+    {% if site.sections contains "agenda" %}
+        {% include agenda-home.html %}
+    {% endif %}
+    
+    {% if site.sections contains "sponsors" %}
+        {% include sponsors-home.html %}
+    {% endif %}
+    
+    {% if site.sections contains "map" %}
+        {% include map-home.html %}
+    {% endif %}
+
+    <hr>
+    
+    {% include footer.html %}
+    {% include 2016_data/js.html %}
+    
+
+
+    </body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+  <style type="text/css">
+    /*INCLUDE MAIN CSS FILE*/
+    {% capture criticalcss %}
+      {% include /2016_css/critical.scss %}
+    {% endcapture %}
+    {{ criticalcss | scssify }}
+  </style>
+  
+  {% include head.html %}
+
+  <body>
+    
+    <!-- Header bar with logo and contacts. -->    
+    {% include header-home.html %}
+        {{ content }}
+  </body>
+    {% include footer.html %}
+</html>

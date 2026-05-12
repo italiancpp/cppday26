@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+{% include head.html %}
+
+	<title>{{site.title}}</title>
+	
+	<style>
+    .wide-hr {
+        /* Workaround for <hr> not displaying...*/
+        width: 100%;
+    }
+
+    /* Flex width that we use only here. */
+    .time-col {
+        width: 15%;
+    }
+    .track-col {
+        width: 42%;
+    }
+</style>
+
+<script type="text/javascript">
+
+function ToFullIsoDate(agendaTimeString, dayString) {
+    return dayString + "T" + agendaTimeString.trim() + ":00Z";
+}
+
+function ConvertToRomeTimeZone(isoDate) {
+    var timeZone = "Europe/Rome";
+    var date = new Date(isoDate);
+    return date.toLocaleString("it-IT", {timeZone: timeZone, hour: "numeric", minute: "numeric"});   
+}
+
+
+function AllTimesToRomeTime() {
+    var dayString = document.getElementById("baseIsoDate").value;
+    
+    var timesToConvert = document.getElementsByClassName("convertibleTime"); 
+    for (var i = 0; i < timesToConvert.length; ++i) {
+        var timeParagraph = timesToConvert[i];
+        var dateAsText = timeParagraph.textContent;
+        var utcTimes = dateAsText.split("-"); // Time must be like 11:30 - 12:30.
+        
+        var startTime = ToFullIsoDate(utcTimes[0], dayString);
+        var endTime = ToFullIsoDate(utcTimes[1], dayString);
+        
+         dateAsText = 
+            ConvertToRomeTimeZone(startTime) +
+            " - " +
+            ConvertToRomeTimeZone(endTime);
+            
+        timeParagraph.textContent= dateAsText;
+    } 
+}
+</script>
+
+</head>
+<body>
+
+<input type="hidden" id="baseIsoDate" value="{{ site.date }}">
+
+<div>
+    <div class="text-center">
+        <h1>{{site.title}} - Your Opinion</h1>
+        <p>Give feedback to sessions you have attended so far and to the event in general (take this at the end).</p> 
+    </div>
+    
+        <div class="v-flex narrow">
+        
+            <hr class="wide-hr">
+            <div class="text-center">
+                <h1><a href="{{site.general_feedback}}" target="_blank">General Event Feedback</a></h1>
+            </div>
+            <hr class="wide-hr">
+            <div class="text-center">
+                <h1>Speakers' feedback</h1>
+            </div>
+            <div class="h-flex">
+                <h3 class="time-col">Time</h3>
+                <h3 class="track-col">Talk</h3>
+            </div>
+            
+            {% assign track_a = site.data.agenda_track_A %}
+            
+            {% assign rows = track_a.size | minus: 1 %}
+            {%- for i in (0..rows) -%}
+                {% if track_a[i].feedback%}
+                    <div class="h-flex">
+                    {%- assign time = track_a[i].time -%}
+            	    <p class="time-col convertibleTime">{{time}}</p>
+            	    <p class="track-col">
+            	        {% if track_a[i].feedback %}
+	                        <a href="{{track_a[i].feedback}}" target="_blank">{{track_a[i].item}}</a>
+	                        <br>
+	                        <em>{{ track_a[i].speaker | join: ", " }}</em>
+	                    {% endif %}
+                    </p>
+            	</div>
+	            {% endif %}
+            {% endfor %}
+        </div>
+    </hr>
+</div>
+ 
+ <script type="text/javascript">
+    AllTimesToRomeTime();
+ </script>
+ 
+</body>
+</html>

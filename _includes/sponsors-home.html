@@ -1,0 +1,18 @@
+
+<section class="text-center">
+<h1>Sponsors</h1>
+
+<p>The conference is totally free to attend, funded by some awesome companies listed here below:</p>
+
+<a id="sponsors" class="push-down-anchor"></a>
+<div class="grid-partners h-flex">
+    {%- for sponsor in site.data.sponsors -%}
+        <div class="v-flex v-flex-center">
+            <a href="{{sponsor.link}}">
+                <img src="img/{{sponsor.logo}}" alt="{{sponsor.name}}">
+            </a>
+        </div>
+    {%- endfor -%}
+</div>
+</section>
+

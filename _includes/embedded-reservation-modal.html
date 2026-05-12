@@ -1,0 +1,30 @@
+<section>
+<a id="reservation" class="push-down-anchor"></a>
+<div class="text-center">
+    <h1>Register now</h1>
+</div>
+
+<div id="eventbrite-widget-container-{{site.eventbrite_id}}"></div>
+
+<!-- Noscript content for added SEO -->
+<noscript><a href="https://cppday25.eventbrite.it" rel="noopener noreferrer" target="_blank"></noscript>
+<!-- You can customize this button any way you like -->
+<center><button class="btn-xl" style="display: inline-block; margin-top: 60px; margin-bottom: 60px; text-transform: none;" id="eventbrite-widget-modal-trigger-1565601820189" type="button">Reserve your seat</button></center>
+<noscript></a>Reserve your seat on Eventbrite</noscript>
+
+<script src="https://www.eventbrite.it/static/widgets/eb_widgets.js"></script>
+
+<script type="text/javascript">
+    var exampleCallback = function() {
+        console.log('Order complete!');
+    };
+
+    window.EBWidgets.createWidget({
+        widgetType: 'checkout',
+        eventId: '1565601820189',
+        modal: true,
+        modalTriggerElementId: 'eventbrite-widget-modal-trigger-1565601820189',
+        onOrderComplete: exampleCallback
+    });
+</script>
+</section>
