@@ -5,3 +5,7 @@
 - name: Sigeo
   link: https://www.sigeosrl.com/
   logo: "sigeo.png"
+
+- name: Your company
+  link: mailto:info@italiancpp.org
+  logo: "your-logo.png"
