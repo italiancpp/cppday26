@@ -18,7 +18,8 @@
   speaker: 
     - Sergei Kushnirenko
   abstract: "Every game developer knows the standard advice: avoid new/delete in hot paths, use pools, profile first. But between &quot;I know allocators exist&quot; and &quot;I understand why The Sims used a triple-stack mechanism for NPC AI&quot; lies a surprisingly deep rabbit hole.<br/>This talk is a practical tour through the allocator zoo as it actually lives in production game engines. We start from why the general-purpose allocator is structurally incompatible with game requirements &mdash; not just slow, but architecturally wrong &mdash; and then walk through the full hierarchy: linear and frame allocators, double-buffered variants (and why the GPU pipeline demands them), stack and double-stack designs, memory pools, free-list and segregated allocators, buddy systems, thread-local caches, and even the underappreciated Fibonacci allocator with its surprisingly good fit for natural-language strings."
-  
+  language: en
+
 - time: 09:40 - 10:10
   item: "☕ Coffee Break 🥐"
 

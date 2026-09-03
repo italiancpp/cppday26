@@ -145,8 +145,14 @@ function ConvertToSelectedTimeZone() {
                 
                 <tr>
                     <td class="convertibleTime"><input type="hidden" value="{{ track_a[i].time }}">{{ track_a[i].time }}</td>
-                    <td class="content-on-top">{% assign talk_id = track_a[i].item | replace: " ", "_" | replace: "+", "p" | replace: ":", "_"  %}{% if track_a[i].abstract %}<a href="#talk_id_{{talk_id}}" class="speakers-link" data-toggle="modal">{{- track_a[i].item -}}</a>{% else %}<span><b>{{- track_a[i].item -}}</b></span>{% endif %}
-                        {% for person in track_a[i].speaker %}{% assign speaker_id = person | replace: " ", "_"  %}<br/>🎙️<a href="#speaker_id_{{speaker_id}}" class="speakers-link" data-toggle="modal" data-dismiss="modal">{{- person -}}</a>{% endfor %}{% if slides_link %}<br><a href="{{slides_link}}" target="_blank">&#x1F64B; Slides</a>{% endif %}{% if video_link and slides_link %} - {% endif %}{% if video_link %}<a href="{{video_link}}" target="_blank">📽 Video</a>{% endif %}
+                    <td class="content-on-top">{% assign talk_id = track_a[i].item | replace: " ", "_" | replace: "+", "p" | replace: ":", "_" | replace: "'", "_" %}{% if track_a[i].abstract %}<a href="#talk_id_{{talk_id}}" class="speakers-link" data-toggle="modal">{{- track_a[i].item -}}</a>{% else %}<span><b>{{- track_a[i].item -}}</b></span>{% endif %}
+                        {% for person in track_a[i].speaker %}{% assign speaker_id = person | replace: " ", "_" %}<br/>🎙️<a href="#speaker_id_{{speaker_id}}" class="speakers-link" data-toggle="modal" data-dismiss="modal">{{- person -}}</a>{% endfor %}
+                        
+                        {% if track_a[i].language == "en" %}
+                            <br/><small style="color: #9ca3af; font-size: 0.85em; font-style: italic;">🇬🇧 Talk in inglese</small>
+                        {% endif %}
+
+                        {% if slides_link %}<br><a href="{{slides_link}}" target="_blank">&#x1F64B; Slides</a>{% endif %}{% if video_link and slides_link %} - {% endif %}{% if video_link %}<a href="{{video_link}}" target="_blank">📽 Video</a>{% endif %}
                     </td>
                 </tr> 
             {%- endfor -%}
