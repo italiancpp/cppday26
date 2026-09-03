@@ -10,7 +10,7 @@
   format: png
   description: "Alberto Barbati is a veteran C++ programmer who has been developing with the language since its early days. He has closely followed the work of the C++ standards committee since 2008 and has specialized in video game programming since 2001. His career includes roles at prominent studios such as Ubisoft Milan, Reply Game Studios, and currently, Nacon Studio Milan. Alberto is also committed to mentoring new talent, having served as a Core Trainer in Game Programming at the Digital Bros Game Academy."
 
-  - name: Sergei Kushnirenko
+- name: Sergei Kushnirenko
   job: Senior Software Engineer
   topic: "Interesting Allocators in Games"
   description: "Sergei Kushnirenko, Senior Software Engineer with over a decade of experience in game engine development, having worked at studios including 4A Games and Forgotten Empires (Age of Empires II), EA, Gaijin, Arkane. Specializes in low-level C++ optimization,  CPU/memory architecture, and compiler internals. An active open source contributor and technical writer, he has published over 100 articles about gamedev and C++, authored the book Game++ (2026), a practical deep-dive into C++ performance engineering for game engines. Sergei runs a gamedev-focused Telegram channel and maintains projects including Akhenaten on GitHub."
