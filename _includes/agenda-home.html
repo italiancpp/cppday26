@@ -162,37 +162,45 @@ function ConvertToSelectedTimeZone() {
     
     <br/>
 
-    <h2>Workshop</h2>
+    <div class="workshops-container" style="max-width: 900px; margin: 3rem auto 0 auto; padding: 0 15px;">
+    <h3 style="text-align: center; margin-bottom: 2.5rem; font-family: 'Montserrat', sans-serif; font-weight: 700;">Workshop</h3>
 
-    <div class="extra-talks-container" style="margin-top: 2rem;">
-    {% for talk in site.data.agenda_track_B %}
-        <div class="content-on-top" style="margin-bottom: 1.5rem; text-align: left;">
-                
-        {% if talk.time %}
-            <span class="convertibleTime" style="font-weight: bold; margin-right: 8px;">
-            <input type="hidden" value="{{ talk.time }}">{{ talk.time }}
-            </span>
-        {% endif %}
-        
+    {% for talk in site.data.nome_secondo_file %}
+    <div style="display: flex; align-items: flex-start; margin-bottom: 2rem; border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding-bottom: 1.5rem;">
+      
+      <div class="convertibleTime" style="flex: 0 0 30%; text-align: center; font-size: 1.1em; color: #a0aec0; padding-top: 2px;">
+        <input type="hidden" value="{{ talk.time }}">{{ talk.time }}
+      </div>
+
+      <div class="content-on-top" style="flex: 1; text-align: left; padding-left: 1.5rem;">
         {% assign talk_id = talk.item | replace: " ", "_" | replace: "+", "p" | replace: ":", "_" | replace: "'", "_" %}
-        {% if talk.abstract %}
-            <a href="#talk_id_{{talk_id}}" class="speakers-link" data-toggle="modal">{{- talk.item -}}</a>
-        {% else %}
-            <span><b>{{- talk.item -}}</b></span>
-        {% endif %}
         
+        {% if talk.abstract %}
+          <a href="#talk_id_{{talk_id}}" class="speakers-link" data-toggle="modal" style="font-size: 1.25em; font-weight: 500; text-decoration: none; color: #4a90e2; font-family: 'Lora', serif; line-height: 1.3; display: inline-block;">{{- talk.item -}}</a>
+        {% else %}
+          <span style="font-size: 1.25em; font-weight: 700; color: #e2e8f0; font-family: 'Lora', serif; line-height: 1.3; display: inline-block;">{{- talk.item -}}</span>
+        {% endif %}
+
         {%- if talk.speaker and talk.speaker.size > 0 -%}<br/>{%- endif -%}
-        {%- for person in talk.speaker %}
-            {% assign speaker_id = person | replace: " ", "_" %}
-            <br/>🎙️<a href="#speaker_id_{{speaker_id}}" class="speakers-link" data-toggle="modal" data-dismiss="modal">{{- person -}}</a>
-        {% endfor -%}
+        {%- for person in talk.speaker -%}
+          {% assign speaker_id = person | replace: " ", "_" %}
+          <div style="margin-top: 6px; font-size: 1.05em; font-family: 'Lora', serif;">
+            🎙️ <a href="#speaker_id_{{speaker_id}}" class="speakers-link" data-toggle="modal" data-dismiss="modal" style="color: #93c5fd; text-decoration: none;">{{- person -}}</a>
+          </div>
+        {%- endfor -%}
 
         {%- if talk.language == "en" -%}
-            <div style="color: #9ca3af; font-size: 0.8em; font-style: italic; line-height: 1.2; margin-top: 2px;">Talk in inglese</div>
+          <div style="color: #9ca3af; font-size: 0.85em; font-style: italic; line-height: 1.2; margin-top: 4px;">Talk in inglese</div>
         {%- endif -%}
-        
-        {%- if talk.slides_link %}<br><a href="{{talk.slides_link}}" target="_blank">&#x1F64B; Slides</a>{% endif -%}       
-        </div>
+
+        {%- if talk.slides_link or talk.video_link -%}
+          <div style="margin-top: 6px; font-size: 0.9em;">
+            {%- if talk.slides_link %}<a href="{{talk.slides_link}}" target="_blank" style="color: #4a90e2;">&#x1F64B; Slides</a>{% endif -%}
+          </div>
+        {%- endif -%}
+      </div>
+
+    </div>
     {% endfor %}
     </div>
 
