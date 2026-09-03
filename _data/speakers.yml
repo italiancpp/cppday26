@@ -40,3 +40,14 @@
   description: "Giorgio Bignotti is a computer science student at the University of Trento focusing on modern C++ software architecture and geospatial technologies (GIS). An active contributor to the KDE ecosystem, he designs and develops modular desktop tooling with Qt."
   format: png
 
+  - name: Davide Bianchi
+  job: Tech Lead @ Schindler
+  topic: "[workshop] Waiting for reflection, everything you wish you never knew about macros."
+  description: "Passionate programmer, embedded engineer for 2 years, teacher for 5, videogame developer for 10, C++ geek for 18 (does this make me a c++ adult now?) and nerd for a life time."
+  format: png
+  
+  - name: Daniele Pallastrelli
+  job: Software Engineer
+  topic: "[workshop] The Shape of Change: Designing Extensible C++ Systems"
+  description: "Daniele Pallastrelli has been programming and designing software for nearly 30 years,<br/>ever since he discovered his passion for it as a teenager in the mid-90s.<br/>He is a professional software engineer, speaker, and author &mdash; as well as an enthusiastic runner.<br/>Although usually reluctant to talk about himself in the third person, he can occasionally be persuaded to do so.<br/>In his spare time, Daniele enjoys writing technical articles and blog posts, sharing insights from his many years of experience with the C++ community."
+  format: png
