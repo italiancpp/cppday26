@@ -12,7 +12,7 @@ baseurl: "/cppday26" # the subpath of your site, e.g. /blog Remove to serve the 
 url: "italiancpp.github.io" # the base hostname & protocol for your site
 
 # Allowed values: cfs, reservation, speakers, agenda, map, sponsors.
-sections: ['cfs', 'map', 'sponsors']
+sections: ['speakers', 'agenda', 'map', 'sponsors']
 
 general_feedback: "https://docs.google.com/forms/d/e/1FAIpQLScj9ZDK_bc_32lLmfNScWxjpn8oQwARna152rI0LecVFds1ZA/viewform?usp=dialog"
 eventbrite_id: "1565601820189"
