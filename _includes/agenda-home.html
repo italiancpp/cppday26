@@ -122,18 +122,16 @@ function ConvertToSelectedTimeZone() {
         <table class="agenda">
             <thead>
                 <tr>
-                    <th class="row-1 agenda-time" style="text-align: center !important; vertical-align: middle !important; padding-top: 10px !important; padding-bottom: 10px !important;">                        <div style="line-height: 1.2; margin: 0 auto; display: inline-block;">
-                            <span style="display: block; margin-bottom: 4px;">Orario</span>
-                            <select class="timeZone" name="timeZone" id="timeZone" onChange="ChangeTimeZone();ConvertToSelectedTimeZone();" style="display: block; margin: 0 auto; line-height: normal;">
-                            <option value="UTC">UTC</option>
-                            <option value="CEST" selected="selected">Rome (CEST)</option>
-                            <option value="America/New_York">U. S. East Coast</option>
-                            <option value="Asia/Tokyo">Japan</option>
-                            <optgroup label="Your browser time">
-                                <option value="LOCALE" id="localTimeZone">Your Locale</option>
-                            </optgroup>
-                            </select>
-                        </div>
+                    <th class="row-1 agenda-time"><center>Orario
+                        <select class="timeZone" name="timeZone" id="timeZone" onChange="ChangeTimeZone();ConvertToSelectedTimeZone();">
+                        <option value="UTC">UTC</option>
+                        <option value="CEST" selected="selected">Rome (CEST)</option>
+                        <option value="America/New_York">U. S. East Coast</option>
+                        <option value="Asia/Tokyo">Japan</option>
+                        <optgroup label="Your browser time">
+                            <option value="LOCALE" id="localTimeZone">Your Locale</option>
+                        </optgroup>
+                        </select></center>
                     </th>
                     <th class="row-2 agenda-activity"><center>Track principale</center></th>
                 </tr>
