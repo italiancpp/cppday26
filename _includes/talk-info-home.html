@@ -1,7 +1,7 @@
 <!-- Talk + Speaker Modals -->
 {% for talk in site.data.agenda_track_A %}
   {% if talk.abstract %}
-    <div class="portfolio-modal modal fade" id="talk_id_{{ talk.item | replace: " ", "_" | replace: "+", "p" | replace: ":", "_" }}" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="portfolio-modal modal fade" id="talk_id_{{ talk.item | replace: " ", "_" | replace: "'", "_" | replace: "+", "p" | replace: ":", "_" }}" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-content">
         <div class="close-modal" data-dismiss="modal">
           <div class="lr"><div class="rl"></div></div>
