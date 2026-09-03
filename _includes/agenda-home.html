@@ -122,7 +122,7 @@ function ConvertToSelectedTimeZone() {
         <table class="agenda">
             <thead>
                 <tr>
-                    <th class="row-1 agenda-time"><center>Orario
+                    <th class="row-1 agenda-time"><center>Orario</center>
                         <select class="timeZone" name="timeZone" id="timeZone" onChange="ChangeTimeZone();ConvertToSelectedTimeZone();">
                         <option value="UTC">UTC</option>
                         <option value="CEST" selected="selected">Rome (CEST)</option>
@@ -131,7 +131,7 @@ function ConvertToSelectedTimeZone() {
                         <optgroup label="Your browser time">
                             <option value="LOCALE" id="localTimeZone">Your Locale</option>
                         </optgroup>
-                        </select></center>
+                        </select>
                     </th>
                     <th class="row-2 agenda-activity"><center>Track principale</center></th>
                 </tr>
@@ -160,6 +160,42 @@ function ConvertToSelectedTimeZone() {
     </table>
     </div>
     
+    <br/>
+
+    <h2>Workshop</h2>
+
+    <div class="extra-talks-container" style="margin-top: 2rem;">
+    {% for talk in site.data.agenda_track_B %}
+        <div class="content-on-top" style="margin-bottom: 1.5rem; text-align: left;">
+                
+        {% if talk.time %}
+            <span class="convertibleTime" style="font-weight: bold; margin-right: 8px;">
+            <input type="hidden" value="{{ talk.time }}">{{ talk.time }}
+            </span>
+        {% endif %}
+        
+        {% assign talk_id = talk.item | replace: " ", "_" | replace: "+", "p" | replace: ":", "_" | replace: "'", "_" %}
+        {% if talk.abstract %}
+            <a href="#talk_id_{{talk_id}}" class="speakers-link" data-toggle="modal">{{- talk.item -}}</a>
+        {% else %}
+            <span><b>{{- talk.item -}}</b></span>
+        {% endif %}
+        
+        {%- if talk.speaker and talk.speaker.size > 0 -%}<br/>{%- endif -%}
+        {%- for person in talk.speaker %}
+            {% assign speaker_id = person | replace: " ", "_" %}
+            <br/>🎙️<a href="#speaker_id_{{speaker_id}}" class="speakers-link" data-toggle="modal" data-dismiss="modal">{{- person -}}</a>
+        {% endfor -%}
+
+        {%- if talk.language == "en" -%}
+            <div style="color: #9ca3af; font-size: 0.8em; font-style: italic; line-height: 1.2; margin-top: 2px;">Talk in inglese</div>
+        {%- endif -%}
+        
+        {%- if talk.slides_link %}<br><a href="{{talk.slides_link}}" target="_blank">&#x1F64B; Slides</a>{% endif -%}       
+        </div>
+    {% endfor %}
+    </div>
+
 <script>
     SetLocale();
     ConvertToSelectedTimeZone();
