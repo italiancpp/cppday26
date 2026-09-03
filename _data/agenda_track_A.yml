@@ -1,15 +1,59 @@
-- time: 06:30 - 07:15
+- time: 06:45 - 07:30
   item: "Doors opening and networking"
 
-- time: 07:15 - 07:45
+- time: 07:30 - 07:50
   item: "Welcome Message"
   speaker: 
     - Marco Arena
-    - Sponsors
+    - SEA Vision
   
-- time: 07:45 - 08:35
-  item: "tbd"
+- time: 07:50 - 08:40
+  item: "C++26 Execution Control: un'introduzione"
   speaker: 
-    - tbd
-  abstract: "tbd"  
+    - Alberto Barbati
+  abstract: "C++26 introduce la libreria Execution Control: un framework generico per gestire la concorrenza e il parallelismo. Si pone come obbiettivo esplicito di fornire un&rsquo;astrazione che sia espressiva e lungimirante come fu il concetto di iteratore ai tempi della STL. Adottando questa astrazione &egrave; ragionevole pensare ad un futuro ecosistema di librerie, realizzate anche da terze parti, che consentiranno di scrivere codice concorrente sicuro e mantenibile, sfruttando a pieno tutte le potenzialit&agrave; dell&rsquo;hardware, incluse le GPU, in maniera interoperabile, coerente e, soprattutto, efficiente.<br/>L&rsquo;intera libreria, con tutto il suo macchinario di meta-programmazione &egrave; un bersaglio decisamente ostico, che non pu&ograve; essere trattato in breve, ma da qualche parte bisogna pur cominciare! Questa presentazione vuole quindi essere un&rsquo;introduzione ai suoi concetti fondamentali, che consenta gi&agrave; di scrivere programmi concorrenti non banali. Prenderemo confidenza con i Sender e con gli adapter che permettono di comporli per realizzare pipeline asincrone complesse. Vedremo il ruolo degli Scheduler e confronteremo il nuovo approccio con quello tradizionale basato su future e promise. Vedremo anche come la libreria si integra in maniera naturale con le coroutine e come queste possono essere usate per scrivere Sender complessi, ma allo stesso tempo efficienti e semplici da mantenere."
 
+- time: 08:50 - 09:40
+  item: "Interesting Allocators in Games"
+  speaker: 
+    - Sergei Kushnirenko
+  abstract: "Every game developer knows the standard advice: avoid new/delete in hot paths, use pools, profile first. But between &quot;I know allocators exist&quot; and &quot;I understand why The Sims used a triple-stack mechanism for NPC AI&quot; lies a surprisingly deep rabbit hole.<br/>This talk is a practical tour through the allocator zoo as it actually lives in production game engines. We start from why the general-purpose allocator is structurally incompatible with game requirements &mdash; not just slow, but architecturally wrong &mdash; and then walk through the full hierarchy: linear and frame allocators, double-buffered variants (and why the GPU pipeline demands them), stack and double-stack designs, memory pools, free-list and segregated allocators, buddy systems, thread-local caches, and even the underappreciated Fibonacci allocator with its surprisingly good fit for natural-language strings."
+
+- time: 09:40 - 10:10
+  item: "☕ Coffee Break 🥐"
+
+- time: 10:10 - 11:00
+  item: "Dal codice legacy ad un registro di algoritmi moderni: rifattorizzazione di centinaia di operazioni di elaborazione delle immagini"
+  speaker: 
+    - Roberta Cisotti
+  abstract: "Molti algoritmi di Computer Vision nascono all'interno di applicazioni monolitiche e, nel corso degli anni, finiscono per essere incapsulati in migliaia di righe di codice strettamente accoppiate al contesto applicativo. Il risultato &egrave; un patrimonio tecnologico prezioso, ma difficile da comprendere, testare, evolvere e riutilizzare.<br/>In questo talk presenter&ograve; un percorso concreto di trasformazione di una grande codebase C++: dall'estrazione di algoritmi di visione da codice legacy fino alla realizzazione di una libreria indipendente, modulare e versionata. Vedremo come individuare e isolare le dipendenze, progettare API stabili, introdurre pratiche di Test-Driven Development, misurare le performance e sfruttare le funzionalit&agrave; del C++ moderno per migliorare qualit&agrave; e manutenibilit&agrave; senza compromettere le prestazioni.<br/>Attraverso un caso reale, analizzeremo le sfide tecniche e organizzative della migrazione da un'architettura monolitica a un ecosistema basato su librerie riutilizzabili, con un approccio graduale che riduce i rischi e massimizza il valore prodotto."
+
+- time: 11:00 - 12:00
+  item: "😋 Lunch"
+
+- time: 12:00 - 12:50
+  item: "Zero-Overhead Dispatches: Leveraging __musttail and Custom ABIs in Modern C++"
+  speaker: 
+    - Paolo Severini
+  abstract: "Interpreters are often assumed to be simple switch-loop engines hindered by heavy dispatch penalties and register spilling. When implementing DrumBrake, the WebAssembly interpreter in V8, we challenged this assumption using modern C++ compiler features and microarchitectural optimizations.<br/>This talk explores how low-level C++ techniques bypass standard ABI overhead to build a high-performance execution pipeline. We dissect how guaranteed tail calls (__musttail) paired with tailored calling conventions (like __vectorcall) eliminate stack frame accumulation and reuse CPU registers across handler transitions, eliminating switch-dispatch penalties while optimizing hardware branch prediction.<br/>Additionally, we will share insights from active experiments with custom calling conventions like __preserve_none, analyzing how altered register preservation impacts register pressure on hot execution paths.<br/>Whether you write runtimes, game engines, or low-latency systems, this session offers a practical deep dive into compiler attributes, generated assembly, and hardware-software co-design in modern C++."
+
+- time: 13:00 - 13:50
+  item: "GIS at Zero Cost: Parsing Binary Formats in Modern C++"
+  speaker: 
+    - Giorgio Bignotti
+  abstract: "GeoPackage is a binary format used by GIS software to store vector features inside SQLite.<br/>It's also a compact case study for a broader question: how do you parse binary data in modern C++ without paying for allocations, copies, or exceptions you don't need?<br/>We'll build a proof-of-concept GeoPackage/WKB reader to explore zero-copy parsing over std::span, std::expected instead of exceptions, explicit endianness handling, and lazy geometry views that decode coordinates only on access.<br/>We'll go through the format's binary layout, from header flags to coordinate encoding, to see what a spec asks an implementation to do."
+
+- time: 13:50 - 14:20
+  item: "☕ Coffee Break 🍪"
+
+- time: 14:20 - 15:10
+  item: "Old-School C++ for the Agentic Age: Lessons from Sane C++ Libraries"
+  speaker: 
+    - Stefano Cristiano
+  abstract: "What happens when an old-school C++ style, developed before the AI wave, turns out to be friendly to agents?<br/>Sane C++ Libraries is a cross-platform open-source project aiming to give C++ a coherent systems-programming base layer. Its independent libraries cover runtime facilities developers expect in ecosystems like JavaScript or Python, from async I/O and files to networking, processes, text, serialization, and HTTP. It is built around explicit constraints: no C++ Standard Library, hidden allocations, exceptions, RTTI, public system headers, or forced framework/build-system adoption.<br/>In an age where code is AI-generated, architecture matters even more. Using the project as a case study, we will focus on fast compile times, allocation-free APIs, lifetime-grouped objects, explicit capacity limits, and library independence, even when that means code duplication or shared private implementation.<br/>The project started before agentic programming was practical, but it's now fully heavily AI focused.<br/>Original principles are now an advantage: small libraries, explicit resource policies, low surprise, tests, and skills make Sane C++ Libraries solid building blocks for your next project."
+
+- time: 15:10 - 15:30
+  item: "Closing Message"
+  speaker: 
+    - Marco Arena
+    - SEA Vision

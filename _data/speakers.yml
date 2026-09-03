@@ -2,4 +2,41 @@
   job: Founder of the Italian C++ Community
   topic: Welcome and Closing Messages
   format: png
-  description: "Marco is the founder of the <a href='https://italiancpp.org'>Italian C++ Community</a>. He works at Tetra Pak as one of the technical leaders of the AI Engineering Team, pioneering the development of AI-based applications for packaging lines. From 2011 to 2019, he served the Ferrari F1 Racing Team (<i>Scuderia Ferrari</i>) as a Software Engineer and C++ Specialist. Marco is very active in the tech communities environment: he founded the <a href='https://italiancpp.org'>Italian C++ Community</a> in 2013, <a href='https://coding-gym.org'>Coding Gym</a> in 2016, <a href='https://mlmodena.it'>ML Modena</a> in 2020, and he collaborates with <a href='https://conoscerelinux.org'>ConoscereLinux</a>. Since 2016, Marco has received the <a href='https://mvp.microsoft.com/it-it/PublicProfile/5001726'>Microsoft MVP</a> award for his commitment to divulgation."
+  description: "Marco is the founder of the <a href='https://italiancpp.org'>Italian C++ Community</a> and he works at <a href='https://nozominetworks.com'>Nozomi Networks.</a>"
+
+- name: Alberto Barbati
+  job: Senior R&D Video game developer at Nacon Studio Milan
+  topic: "C++26 Execution Control: un'introduzione"
+  format: png
+  description: "Alberto Barbati is a veteran C++ programmer who has been developing with the language since its early days. He has closely followed the work of the C++ standards committee since 2008 and has specialized in video game programming since 2001. His career includes roles at prominent studios such as Ubisoft Milan, Reply Game Studios, and currently, Nacon Studio Milan. Alberto is also committed to mentoring new talent, having served as a Core Trainer in Game Programming at the Digital Bros Game Academy."
+
+  - name: Sergei Kushnirenko
+  job: Senior Software Engineer
+  topic: "Interesting Allocators in Games"
+  description: "Sergei Kushnirenko, Senior Software Engineer with over a decade of experience in game engine development, having worked at studios including 4A Games and Forgotten Empires (Age of Empires II), EA, Gaijin, Arkane. Specializes in low-level C++ optimization,  CPU/memory architecture, and compiler internals. An active open source contributor and technical writer, he has published over 100 articles about gamedev and C++, authored the book Game++ (2026), a practical deep-dive into C++ performance engineering for game engines. Sergei runs a gamedev-focused Telegram channel and maintains projects including Akhenaten on GitHub."
+  format: png
+
+- name: Paolo Severini
+  job: Senior Software Engineer at Microsoft
+  topic: "Zero-Overhead Dispatches: Leveraging __musttail and Custom ABIs in Modern C++"
+  description: "Paolo Severini is a software engineer at Microsoft working on WebAssembly execution and debugging in V8, and the author of the DrumBrake interpreter. He began his low-level programming career writing assembly for Simulmondo&rsquo;s Commodore 64 title I Play: 3D Tennis, bringing over three decades of bare-metal performance engineering to modern C++ architecture."
+  format: png
+
+- name: Roberta Cisotti
+  job: Software Developer
+  topic: "Dal codice legacy ad un registro di algoritmi moderni: rifattorizzazione di centinaia di operazioni di elaborazione delle immagini"
+  description: "Nata in provincia di Lecce, a 19 anni mi sono trasferita a Pavia dove ho conseguito laurea triennale e magistrale in ingegneria biomedica. Subito dopo la laurea sono entrata nel mondo del lavoro come Software Developer C++, avendo notato questa mia passione gi&agrave; durante il corso di laurea. Adesso lavoro da 3 anni e mezzo sempre in SEAVision."
+  format: png
+
+- name: Stefano Cristiano
+  job: Principal Research Scientist at NVIDIA
+  topic: "Old-School C++ for the Agentic Age: Lessons from Sane C++ Libraries"
+  description: "Stefano Cristiano has been part of the Italian C++ community since the early Slack days, joining a large portion of its events, sharing his views, experience and opinions of writing C++ since 1998.<br/>He is now directing AI agents to expand Sane C++ Libraries (https://pagghiu.github.io/SaneCppLibraries), a personal open source project developed in his spare time, after many glorious years of carefully writing it line by line.<br/>He is currently a Principal Engineer at NVIDIA, contributing to development of Physical AI as member of the Omniverse Physics team."
+  format: png
+
+- name: Giorgio Bignotti
+  job: CS Student at University of Trento
+  topic: "GIS at Zero Cost: Parsing Binary Formats in Modern C++"
+  description: "Giorgio Bignotti is a computer science student at the University of Trento focusing on modern C++ software architecture and geospatial technologies (GIS). An active contributor to the KDE ecosystem, he designs and develops modular desktop tooling with Qt."
+  format: png
+
