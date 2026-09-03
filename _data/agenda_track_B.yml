@@ -1,12 +1,12 @@
 - time: 07:50 - 09:40
-  item: "The Shape of Change: Designing Extensible C++ Systems"
+  item: "[workshop] The Shape of Change: Designing Extensible C++ Systems"
   speaker: 
     - Daniele Pallastrelli
   abstract: "Il software vive pi&ugrave; a lungo di quanto ci aspettiamo, e cambia in modi che raramente prevediamo. Alcuni sistemi sopravvivono a decenni di requisiti in evoluzione, altri diventano rigidi e fragili dopo poche release.<br/>In questo talk esploriamo come ragionare sul cambiamento nei sistemi C++: come riconoscere i variation point, come scegliere il giusto meccanismo di astrazione, e come tecniche di design diverse &mdash; polimorfismo runtime, template, type erasure, policy, plugin &mdash; influenzino evolvibilit&agrave;, performance e complessit&agrave;. Partiamo da un caso reale, un sistema nato senza un vero design, in cui i variation point emergono quasi sempre da un concetto del dominio a cui non &egrave; mai stato dato un nome nel codice.<br/>L'obiettivo non &egrave; imparare un'altra feature del linguaggio, ma costruire un modello mentale per progettare software capace di adattarsi e durare."
 
 
 - time: 12:00 - 13:50
-  item: "Waiting for reflection, everything you wish you never knew about macros."
+  item: "[workshop] Waiting for reflection, everything you wish you never knew about macros."
   speaker: 
     - Davide Bianchi
   abstract: "C++ 26 is right behind the corner and finally, after all this time, we have compile-time reflection. The most generic, robust, complete, omnipotent, absolute and total feature to make your enum::ToString.<br/>But is your compiler there yet? Is your toolchain using it? Does your company supports It?<br/>HAVE NO FEAR!<br/>We got you covered!<br/>We scouted the deepest pit of techical debt and the pinnacle of clean code to give you the ultimate knowledge of the programmers of old.<br/>Today you'll learn all there is to know to macro, preprocessor, arcane tricks and wild conformance modes to need reflection no more."
