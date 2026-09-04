@@ -1,5 +1,5 @@
 - name: Marco Arena
-  job: Founder of the Italian C++ Community
+  job: Sviluppatore C++ e fondatore dell'Italian C++ Community
   topic: Welcome and Closing Messages
   format: png
   description: "Marco &egrave; il fondatore dell'<a href='https://italiancpp.org'>Italian C++ Community</a> e lavora per <a href='https://nozominetworks.com'>Nozomi Networks</a>."
@@ -47,7 +47,7 @@
   format: png
   
 - name: Daniele Pallastrelli
-  job: Software Engineer
+  job: Senior software engineer
   topic: "[workshop] The Shape of Change: Designing Extensible C++ Systems"
   description: "Daniele Pallastrelli has been programming and designing software for nearly 30 years,<br/>ever since he discovered his passion for it as a teenager in the mid-90s.<br/>He is a professional software engineer, speaker, and author &mdash; as well as an enthusiastic runner.<br/>Although usually reluctant to talk about himself in the third person, he can occasionally be persuaded to do so.<br/>In his spare time, Daniele enjoys writing technical articles and blog posts, sharing insights from his many years of experience with the C++ community."
   format: png
