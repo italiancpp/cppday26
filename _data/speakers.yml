@@ -2,7 +2,7 @@
   job: Founder of the Italian C++ Community
   topic: Welcome and Closing Messages
   format: png
-  description: "Marco is the founder of the <a href='https://italiancpp.org'>Italian C++ Community</a> and he works at <a href='https://nozominetworks.com'>Nozomi Networks.</a>"
+  description: "Marco &egrave; il fondatore dell'<a href='https://italiancpp.org'>Italian C++ Community</a> e lavora per <a href='https://nozominetworks.com'>Nozomi Networks</a>."
 
 - name: Alberto Barbati
   job: Senior R&D Video game developer at Nacon Studio Milan
@@ -19,7 +19,7 @@
 - name: Paolo Severini
   job: Senior Software Engineer at Microsoft
   topic: "Zero-Overhead Dispatches: Leveraging __musttail and Custom ABIs in Modern C++"
-  description: "Paolo Severini is a software engineer at Microsoft working on WebAssembly execution and debugging in V8, and the author of the DrumBrake interpreter. He began his low-level programming career writing assembly for Simulmondo&rsquo;s Commodore 64 title I Play: 3D Tennis, bringing over three decades of bare-metal performance engineering to modern C++ architecture."
+  description: "Paolo Severini &egrave; un software engineer in Microsoft, dove si occupa dell'engine JavaScript V8, focalizzandosi su esecuzione e debugging di WebAssembly. La sua passione per il low-level programming &egrave; nata ai tempi del Commodore 64, scrivendo assembly 6510 per il videogioco di Simulmondo &quot;I Play: 3D Tennis&quot;."
   format: png
 
 - name: Roberta Cisotti
