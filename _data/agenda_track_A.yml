@@ -12,13 +12,15 @@
   speaker: 
     - Alberto Barbati
   abstract: "C++26 introduce la libreria Execution Control: un framework generico per gestire la concorrenza e il parallelismo. Si pone come obbiettivo esplicito di fornire un&rsquo;astrazione che sia espressiva e lungimirante come fu il concetto di iteratore ai tempi della STL. Adottando questa astrazione &egrave; ragionevole pensare ad un futuro ecosistema di librerie, realizzate anche da terze parti, che consentiranno di scrivere codice concorrente sicuro e mantenibile, sfruttando a pieno tutte le potenzialit&agrave; dell&rsquo;hardware, incluse le GPU, in maniera interoperabile, coerente e, soprattutto, efficiente.<br/>L&rsquo;intera libreria, con tutto il suo macchinario di meta-programmazione &egrave; un bersaglio decisamente ostico, che non pu&ograve; essere trattato in breve, ma da qualche parte bisogna pur cominciare! Questa presentazione vuole quindi essere un&rsquo;introduzione ai suoi concetti fondamentali, che consenta gi&agrave; di scrivere programmi concorrenti non banali. Prenderemo confidenza con i Sender e con gli adapter che permettono di comporli per realizzare pipeline asincrone complesse. Vedremo il ruolo degli Scheduler e confronteremo il nuovo approccio con quello tradizionale basato su future e promise. Vedremo anche come la libreria si integra in maniera naturale con le coroutine e come queste possono essere usate per scrivere Sender complessi, ma allo stesso tempo efficienti e semplici da mantenere."
-
+  feedback: https://docs.google.com/forms/d/e/1FAIpQLSfcy4bt_2QAf90at5AwOCbkusfNveWYNdCNn673Cz7xIXXutQ/viewform?usp=dialog
+  
 - time: 08:50 - 09:40
   item: "Interesting Allocators in Games"
   speaker: 
     - Sergei Kushnirenko
   abstract: "Every game developer knows the standard advice: avoid new/delete in hot paths, use pools, profile first. But between &quot;I know allocators exist&quot; and &quot;I understand why The Sims used a triple-stack mechanism for NPC AI&quot; lies a surprisingly deep rabbit hole.<br/>This talk is a practical tour through the allocator zoo as it actually lives in production game engines. We start from why the general-purpose allocator is structurally incompatible with game requirements &mdash; not just slow, but architecturally wrong &mdash; and then walk through the full hierarchy: linear and frame allocators, double-buffered variants (and why the GPU pipeline demands them), stack and double-stack designs, memory pools, free-list and segregated allocators, buddy systems, thread-local caches, and even the underappreciated Fibonacci allocator with its surprisingly good fit for natural-language strings."
   language: en
+  feedback: https://docs.google.com/forms/d/e/1FAIpQLSe-sEqN4E2a-IzxfVnlvLar82zXtRlbitg3Pf5XlrqwQr00wg/viewform?usp=dialog
 
 - time: 09:40 - 10:10
   item: "☕ Coffee Break 🥐"
@@ -28,6 +30,7 @@
   speaker: 
     - Roberta Cisotti
   abstract: "Molti algoritmi di Computer Vision nascono all'interno di applicazioni monolitiche e, nel corso degli anni, finiscono per essere incapsulati in migliaia di righe di codice strettamente accoppiate al contesto applicativo. Il risultato &egrave; un patrimonio tecnologico prezioso, ma difficile da comprendere, testare, evolvere e riutilizzare.<br/>In questo talk presenter&ograve; un percorso concreto di trasformazione di una grande codebase C++: dall'estrazione di algoritmi di visione da codice legacy fino alla realizzazione di una libreria indipendente, modulare e versionata. Vedremo come individuare e isolare le dipendenze, progettare API stabili, introdurre pratiche di Test-Driven Development, misurare le performance e sfruttare le funzionalit&agrave; del C++ moderno per migliorare qualit&agrave; e manutenibilit&agrave; senza compromettere le prestazioni.<br/>Attraverso un caso reale, analizzeremo le sfide tecniche e organizzative della migrazione da un'architettura monolitica a un ecosistema basato su librerie riutilizzabili, con un approccio graduale che riduce i rischi e massimizza il valore prodotto."
+  feedback: https://docs.google.com/forms/d/e/1FAIpQLSdUpLYk5QPMU4aynlv3Xpcbh22BIfrSaB9uAMfuWaR1C5aWaQ/viewform?usp=dialog
 
 - time: 11:00 - 12:00
   item: "😋 Lunch"
@@ -37,12 +40,14 @@
   speaker: 
     - Paolo Severini
   abstract: "Gli interpreti vengono spesso considerati semplici switch-loop engine, penalizzati da pesanti overhead di dispatch e register spilling. Quando abbiamo implementato DrumBrake, l'interprete WebAssembly in V8, abbiamo messo in discussione questo approccio sfruttando le feature dei compilatori C++ moderni e varie ottimizzazioni microarchitetturali.<br/>Questo talk esplora come alcune tecniche C++ low-level permettano di bypassare l'overhead delle ABI standard per realizzare una pipeline di esecuzione ad alte prestazioni. Vedremo nel dettaglio come le guaranteed tail call (__musttail), combinate con calling convention dedicate (come __vectorcall), eliminino l'accumulo dello stack frame e riutilizzino i registri CPU durante le transizioni tra instruction handler, minimizzando il costo del dispatch via switch e ottimizzando la branch prediction.<br/>Inoltre, illustreremo alcuni esperimenti con custom calling convention come __preserve_none, analizzando come una diversa gestione dei registri possa migliorare la register pressure negli hot path di esecuzione.<br/>Che scriviate runtime, game engine o sistemi low-latency, questa sessione offre un'analisi pratica di compiler attributes, codice assembly generato e interazione con l'hardware con il moderno C++."
+  feedback: https://docs.google.com/forms/d/e/1FAIpQLSdGyHFmKzl5YrHR4G27yIS1CtokWGmyqzJfSMGqKpkZwJ1g1g/viewform?usp=dialog
 
 - time: 13:00 - 13:50
   item: "GIS a costo zero: parsing di formati binari in C++23"
   speaker: 
     - Giorgio Bignotti
   abstract: "GeoPackage &egrave; lo standard utilizzato nel GIS per salvare geometrie vettoriali all'interno di SQLite.<br/>Partendo da questo formato, vedremo come affrontare il parsing di dati binari in C++23 eliminando l'overhead di allocazioni dinamiche, copie ed eccezioni. Costruiremo un parser per geometrie WKB (Well-Known Binary) sfruttando std::span per un approccio zero-copy, std::expected per la gestione degli errori e &lt;bit&gt; per gestire in sicurezza endianness e allineamento. Esploreremo inoltre un pattern di decodifica lazy per accedere ai vertici solo quando strettamente necessario.<br/>Analizzeremo il layout binario byte per byte, dimostrando come gli strumenti moderni del linguaggio permettano di implementare una specifica reale in modo molto pi&ugrave; semplice, sicuro e performante rispetto all'approccio classico."
+  feedback: https://docs.google.com/forms/d/e/1FAIpQLSdOwmkssjlGPIs4AcNCeQo26041xZNplAov3-G0Y76of0ZGpQ/viewform?usp=dialog
 
 - time: 13:50 - 14:20
   item: "☕ Coffee Break 🍪"
@@ -52,6 +57,7 @@
   speaker: 
     - Stefano Cristiano
   abstract: "What happens when an old-school C++ style, developed before the AI wave, turns out to be friendly to agents?<br/>Sane C++ Libraries is a cross-platform open-source project aiming to give C++ a coherent systems-programming base layer. Its independent libraries cover runtime facilities developers expect in ecosystems like JavaScript or Python, from async I/O and files to networking, processes, text, serialization, and HTTP. It is built around explicit constraints: no C++ Standard Library, hidden allocations, exceptions, RTTI, public system headers, or forced framework/build-system adoption.<br/>In an age where code is AI-generated, architecture matters even more. Using the project as a case study, we will focus on fast compile times, allocation-free APIs, lifetime-grouped objects, explicit capacity limits, and library independence, even when that means code duplication or shared private implementation.<br/>The project started before agentic programming was practical, but it's now fully heavily AI focused.<br/>Original principles are now an advantage: small libraries, explicit resource policies, low surprise, tests, and skills make Sane C++ Libraries solid building blocks for your next project."
+  feedback: https://docs.google.com/forms/d/e/1FAIpQLSe5ZxNlmzPV24JJenNmHr06ZgZOCM8OvBFVG426eb6jGK5Dgg/viewform?usp=dialog
 
 - time: 15:10 - 15:30
   item: "Closing Message"

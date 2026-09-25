@@ -74,7 +74,7 @@ function AllTimesToRomeTime() {
             </div>
             <hr class="wide-hr">
             <div class="text-center">
-                <h1>Speakers' feedback</h1>
+                <h1>Talks feedback</h1>
             </div>
             <div class="h-flex">
                 <h3 class="time-col">Time</h3>
@@ -94,6 +94,34 @@ function AllTimesToRomeTime() {
 	                        <a href="{{track_a[i].feedback}}" target="_blank">{{track_a[i].item}}</a>
 	                        <br>
 	                        <em>{{ track_a[i].speaker | join: ", " }}</em>
+	                    {% endif %}
+                    </p>
+            	</div>
+	            {% endif %}
+            {% endfor %}
+
+            <hr class="wide-hr">
+            <div class="text-center">
+                <h1>Workshops feedback</h1>
+            </div>
+            <div class="h-flex">
+                <h3 class="time-col">Time</h3>
+                <h3 class="track-col">Talk</h3>
+            </div>
+            
+            {% assign track_b = site.data.agenda_track_B %}
+            
+            {% assign rows = track_b.size | minus: 1 %}
+            {%- for i in (0..rows) -%}
+                {% if track_b[i].feedback%}
+                    <div class="h-flex">
+                    {%- assign time = track_b[i].time -%}
+            	    <p class="time-col convertibleTime">{{time}}</p>
+            	    <p class="track-col">
+            	        {% if track_b[i].feedback %}
+	                        <a href="{{track_b[i].feedback}}" target="_blank">{{track_b[i].item}}</a>
+	                        <br>
+	                        <em>{{ track_b[i].speaker | join: ", " }}</em>
 	                    {% endif %}
                     </p>
             	</div>

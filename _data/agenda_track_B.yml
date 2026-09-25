@@ -3,11 +3,11 @@
   speaker: 
     - Daniele Pallastrelli
   abstract: "Il software vive pi&ugrave; a lungo di quanto ci aspettiamo, e cambia in modi che raramente prevediamo. Alcuni sistemi sopravvivono a decenni di requisiti in evoluzione, altri diventano rigidi e fragili dopo poche release.<br/>In questo workshop lavoreremo su un caso reale: un sistema C++ nato senza un vero design, che nel tempo deve adattarsi a nuovi requisiti. Partiremo dal codice e dai cambiamenti che gli vengono richiesti, per individuare i variation point: quei punti in cui il dominio introduce una dimensione di variabilit&agrave; che il codice non ha ancora saputo rappresentare.<br/>A partire da questi punti confronteremo diverse strategie di design ragionando su quando usarle e sui compromessi che introducono in termini di evolvibilit&agrave;, performance, complessit&agrave; e accoppiamento.<br/>L'obiettivo non &egrave; imparare un'altra feature del linguaggio, ma imparare a riconoscere la forma del cambiamento e a scegliere consapevolmente dove rappresentarlo nel codice.<br/>Il workshop &egrave; quindi soprattutto un esercizio di design: analizzeremo requisiti e codice, formuleremo ipotesi sull'evoluzione futura e proveremo diverse soluzioni, discutendone vantaggi e costi."
-
+  feedback: https://docs.google.com/forms/d/e/1FAIpQLSdl6L223HDsBjiKERp7Ftao9-PbJlJolci3qRLadfFYC6dz4g/viewform?usp=dialog
 
 - time: 12:00 - 13:50
   item: "Waiting for reflection: everything you wish you never knew about macros"
   speaker: 
     - Davide Bianchi
   abstract: "C++ 26 is right behind the corner and finally, after all this time, we have compile-time reflection. The most generic, robust, complete, omnipotent, absolute and total feature to make your enum::ToString.<br/>But is your compiler there yet? Is your toolchain using it? Does your company supports It?<br/>HAVE NO FEAR!<br/>We got you covered!<br/>We scouted the deepest pit of techical debt and the pinnacle of clean code to give you the ultimate knowledge of the programmers of old.<br/>Today you'll learn all there is to know to macro, preprocessor, arcane tricks and wild conformance modes to need reflection no more."
-  
+  feedback: https://docs.google.com/forms/d/e/1FAIpQLSftQP9HI2Iv3FrE_30u-Kn0dS2Ibk39tpBjn5-NnJ4b1C7shw/viewform?usp=dialog
