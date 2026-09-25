@@ -1,8 +1,8 @@
 - time: 06:45 - 07:30
-  item: "Doors opening and networking"
+  item: "Accoglienza e networking"
 
 - time: 07:30 - 07:50
-  item: "Welcome Message"
+  item: "Messaggio di benvenuto"
   speaker: 
     - Marco Arena
     - SEA Vision
@@ -23,7 +23,7 @@
   feedback: https://docs.google.com/forms/d/e/1FAIpQLSe-sEqN4E2a-IzxfVnlvLar82zXtRlbitg3Pf5XlrqwQr00wg/viewform?usp=dialog
 
 - time: 09:40 - 10:10
-  item: "☕ Coffee Break 🥐"
+  item: "☕ Pausa caffè 🥐"
 
 - time: 10:10 - 11:00
   item: "Dal codice legacy ad un registro di algoritmi moderni: rifattorizzazione di centinaia di operazioni di elaborazione delle immagini"
@@ -33,7 +33,7 @@
   feedback: https://docs.google.com/forms/d/e/1FAIpQLSdUpLYk5QPMU4aynlv3Xpcbh22BIfrSaB9uAMfuWaR1C5aWaQ/viewform?usp=dialog
 
 - time: 11:00 - 12:00
-  item: "😋 Lunch"
+  item: "😋 Pranzo"
 
 - time: 12:00 - 12:50
   item: "Zero-Overhead Dispatch: Sfruttare __musttail e Custom ABI in C++"
@@ -50,7 +50,7 @@
   feedback: https://docs.google.com/forms/d/e/1FAIpQLSdOwmkssjlGPIs4AcNCeQo26041xZNplAov3-G0Y76of0ZGpQ/viewform?usp=dialog
 
 - time: 13:50 - 14:20
-  item: "☕ Coffee Break 🍪"
+  item: "☕ Pausa caffè 🍪"
 
 - time: 14:20 - 15:10
   item: "Old-School C++ for the Agentic Age: Lessons from Sane C++ Libraries"
@@ -60,7 +60,7 @@
   feedback: https://docs.google.com/forms/d/e/1FAIpQLSe5ZxNlmzPV24JJenNmHr06ZgZOCM8OvBFVG426eb6jGK5Dgg/viewform?usp=dialog
 
 - time: 15:10 - 15:30
-  item: "Closing Message"
+  item: "Messaggio di chiusura"
   speaker: 
     - Marco Arena
     - SEA Vision
