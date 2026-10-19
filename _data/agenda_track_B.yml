@@ -11,3 +11,4 @@
     - Davide Bianchi
   abstract: "C++ 26 is right behind the corner and finally, after all this time, we have compile-time reflection. The most generic, robust, complete, omnipotent, absolute and total feature to make your enum::ToString.<br/>But is your compiler there yet? Is your toolchain using it? Does your company supports It?<br/>HAVE NO FEAR!<br/>We got you covered!<br/>We scouted the deepest pit of techical debt and the pinnacle of clean code to give you the ultimate knowledge of the programmers of old.<br/>Today you'll learn all there is to know to macro, preprocessor, arcane tricks and wild conformance modes to need reflection no more."
   feedback: https://docs.google.com/forms/d/e/1FAIpQLSftQP9HI2Iv3FrE_30u-Kn0dS2Ibk39tpBjn5-NnJ4b1C7shw/viewform?usp=dialog
+  slides: https://github.com/davide9/cppday26.git

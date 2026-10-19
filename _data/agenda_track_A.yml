@@ -32,6 +32,7 @@
     - Roberta Cisotti
   abstract: "Molti algoritmi di Computer Vision nascono all'interno di applicazioni monolitiche e, nel corso degli anni, finiscono per essere incapsulati in migliaia di righe di codice strettamente accoppiate al contesto applicativo. Il risultato &egrave; un patrimonio tecnologico prezioso, ma difficile da comprendere, testare, evolvere e riutilizzare.<br/>In questo talk presenter&ograve; un percorso concreto di trasformazione di una grande codebase C++: dall'estrazione di algoritmi di visione da codice legacy fino alla realizzazione di una libreria indipendente, modulare e versionata. Vedremo come individuare e isolare le dipendenze, progettare API stabili, introdurre pratiche di Test-Driven Development, misurare le performance e sfruttare le funzionalit&agrave; del C++ moderno per migliorare qualit&agrave; e manutenibilit&agrave; senza compromettere le prestazioni.<br/>Attraverso un caso reale, analizzeremo le sfide tecniche e organizzative della migrazione da un'architettura monolitica a un ecosistema basato su librerie riutilizzabili, con un approccio graduale che riduce i rischi e massimizza il valore prodotto."
   feedback: https://docs.google.com/forms/d/e/1FAIpQLSdUpLYk5QPMU4aynlv3Xpcbh22BIfrSaB9uAMfuWaR1C5aWaQ/viewform?usp=dialog
+  slides: https://github.com/italiancpp/cppday26-slides/blob/main/Dal%20codice%20legacy%20ad%20un%20registro%20di%20algoritmi%20moderni%20-%20Roberta%20Cisotti.pdf
 
 - time: 11:00 - 12:00
   item: "😋 Pranzo"
@@ -50,7 +51,8 @@
     - Giorgio Bignotti
   abstract: "GeoPackage &egrave; lo standard utilizzato nel GIS per salvare geometrie vettoriali all'interno di SQLite.<br/>Partendo da questo formato, vedremo come affrontare il parsing di dati binari in C++23 eliminando l'overhead di allocazioni dinamiche, copie ed eccezioni. Costruiremo un parser per geometrie WKB (Well-Known Binary) sfruttando std::span per un approccio zero-copy, std::expected per la gestione degli errori e &lt;bit&gt; per gestire in sicurezza endianness e allineamento. Esploreremo inoltre un pattern di decodifica lazy per accedere ai vertici solo quando strettamente necessario.<br/>Analizzeremo il layout binario byte per byte, dimostrando come gli strumenti moderni del linguaggio permettano di implementare una specifica reale in modo molto pi&ugrave; semplice, sicuro e performante rispetto all'approccio classico."
   feedback: https://docs.google.com/forms/d/e/1FAIpQLSdOwmkssjlGPIs4AcNCeQo26041xZNplAov3-G0Y76of0ZGpQ/viewform?usp=dialog
-
+  slides: https://github.com/italiancpp/cppday26-slides/blob/main/GIS%20a%20costo%20zero%20-%20Giorgio%20Bignotti.pdf
+  
 - time: 13:50 - 14:20
   item: "☕ Pausa caffè 🍪"
 
