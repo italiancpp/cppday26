@@ -170,7 +170,8 @@ function ConvertToSelectedTimeZone() {
       <div class="convertibleTime" style="flex: 0 0 35%; text-align: center; font-size: 1.3em; font-weight: 700; color: #60a5fa; padding-top: 2px;"><input type="hidden" value="{{ talk.time }}">{{ talk.time }}</div>
       <div class="content-on-top" style="flex: 1; text-align: left; padding-left: 2rem;">
         {% assign talk_id = talk.item | replace: " ", "_" | replace: "+", "p" | replace: ":", "_" | replace: "'", "_" %}
-        
+        {% assign slides_link = talk.slides %}
+
         {% if talk.abstract %}
           <a href="#talk_id_{{talk_id}}" class="speakers-link" data-toggle="modal" style="font-size: 1.35em; text-decoration: none; line-height: 1.3; display: inline-block;">{{- talk.item -}}</a>
         {% else %}
