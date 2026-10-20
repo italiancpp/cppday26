@@ -24,7 +24,8 @@
   language: en
   feedback: https://docs.google.com/forms/d/e/1FAIpQLSe-sEqN4E2a-IzxfVnlvLar82zXtRlbitg3Pf5XlrqwQr00wg/viewform?usp=dialog
   video: https://www.youtube.com/watch?v=6fWwaLMgC94
-  
+  slides: https://github.com/italiancpp/cppday26-slides/blob/main/Interesting%20Allocators%20in%20Games%20-%20Sergei%20Kushnirenko.pdf
+
 - time: 09:40 - 10:10
   item: "☕ Pausa caffè 🥐"
 
