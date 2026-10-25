@@ -4,7 +4,8 @@
     - Daniele Pallastrelli
   abstract: "Il software vive pi&ugrave; a lungo di quanto ci aspettiamo, e cambia in modi che raramente prevediamo. Alcuni sistemi sopravvivono a decenni di requisiti in evoluzione, altri diventano rigidi e fragili dopo poche release.<br/>In questo workshop lavoreremo su un caso reale: un sistema C++ nato senza un vero design, che nel tempo deve adattarsi a nuovi requisiti. Partiremo dal codice e dai cambiamenti che gli vengono richiesti, per individuare i variation point: quei punti in cui il dominio introduce una dimensione di variabilit&agrave; che il codice non ha ancora saputo rappresentare.<br/>A partire da questi punti confronteremo diverse strategie di design ragionando su quando usarle e sui compromessi che introducono in termini di evolvibilit&agrave;, performance, complessit&agrave; e accoppiamento.<br/>L'obiettivo non &egrave; imparare un'altra feature del linguaggio, ma imparare a riconoscere la forma del cambiamento e a scegliere consapevolmente dove rappresentarlo nel codice.<br/>Il workshop &egrave; quindi soprattutto un esercizio di design: analizzeremo requisiti e codice, formuleremo ipotesi sull'evoluzione futura e proveremo diverse soluzioni, discutendone vantaggi e costi."
   feedback: https://docs.google.com/forms/d/e/1FAIpQLSdl6L223HDsBjiKERp7Ftao9-PbJlJolci3qRLadfFYC6dz4g/viewform?usp=dialog
-
+  slides: https://github.com/italiancpp/cppday26-slides/blob/main/La%20forma%20del%20cambiamento%20-%20Daniele%20Pallastrelli.pdf
+  
 - time: 12:00 - 13:50
   item: "Waiting for reflection: everything you wish you never knew about macros"
   speaker: 
